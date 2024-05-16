@@ -1,7 +1,10 @@
-import React from "react";
-
+import { useState } from 'react';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 function Write() {
+  const [value, setValue]= useState('')
   return (
+    
     <div className="px-[130px] my-6 flex gap-4 ">
       <div className="w-[1000px] flex flex-col gap-5">
         <input
@@ -10,6 +13,9 @@ function Write() {
           className="px-6 py-2 border-[1px]
          border-gray-800 rounded-md"
         />
+        <div className='h-[420px]  overflow-hidden border-[1px] border-gray-600'>
+             <ReactQuill theme="snow" value={value} onChange={setValue} className='h-[100%] border-none ' />
+        </div>
       </div>
       <div className="flex flex-col gap-5 w-[350px] ">
         <div className="p-2 border-[1px] border-gray-500">
