@@ -5,7 +5,7 @@ import Login from "./pages/Login";
 import Write from "./pages/Write";
 import Single from "./pages/Single";
 import Navbar from "./components/Navbar"
-import Footer from "./components/Navbar"
+import Footer from "./components/Footer"
 const Layout =()=>{
     return <>
        <Navbar/>
