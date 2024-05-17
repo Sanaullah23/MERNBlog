@@ -8,19 +8,19 @@ function Navbar() {
   const {currentUser}= useContext(AuthContext);
   return (
     <>
-      <div>
+      <div className='bg-gray-800 text-zinc-50'>
         <div className='px-11 py-6 flex justify-between'>
           <div>
             <Link to="/"><img src={logo} alt="" /></Link>
           </div>
           <div className='flex justify-between items-center gap-3'>
-            <Link to="/cat?=science">
+            <Link to="/?cat=science">
               <h6>SCIENCE</h6>
             </Link>
-            <Link to="/cat?=technology">
+            <Link to="/?cat=technology">
               <h6>TECHNOLOGY</h6>
             </Link>
-            <Link to="/cat?=design">
+            <Link to="/?cat=design">
               <h6>DESIGN</h6>
             </Link>
             <span className='cursor-pointer font-medium'>{currentUser?.name}</span>
@@ -28,13 +28,13 @@ function Navbar() {
             :<Link to="/login">
               <span className='cursor-pointer font-medium bg-teal-500 text-white px-2 py-1 rounded-md'>Login</span>
               </Link>}
-            <span >
+           {currentUser ?  <span >
             <Link to="/write"
             className='bg-teal-500  text-white px-2 py-[16px] rounded-full
             hover:bg-teal-600 duration-300'>
               Write
             </Link>
-            </span>
+            </span> : ""}
             
           </div>
         </div>

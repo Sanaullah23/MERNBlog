@@ -1,15 +1,15 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/authContext";
+import axios from "axios";
 
 function Logout() {
   const navigate = useNavigate();
   const { currentUser, setCurrentUser } = useContext(AuthContext);
 
-  const logout =async () => {
-   
-     axios.post('http://localhost:8080/api/v1/auth/lgout')
-    setCurrentUser(localStorage.removeItem("user"));
+  const logout = async() => {
+    await axios.post("http://localhost:8080/api/v1/auth/logout")
+    setCurrentUser(null);
   };
   return (
     <div>

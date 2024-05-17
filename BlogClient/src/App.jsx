@@ -6,6 +6,9 @@ import Write from "./pages/Write";
 import Single from "./pages/Single";
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
+import PrivateRoute from "./components/PrivateRoute";
+
+
 const Layout =()=>{
     return <>
        <Navbar/>
@@ -25,11 +28,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/write",
-        element: <Write />,
+        element: (<PrivateRoute><Write /></PrivateRoute>)
       },
       {
         path: "/post/:id",
-        element: <Single />,
+        element: (<PrivateRoute><Single /></PrivateRoute>)
       },
     ]
   },

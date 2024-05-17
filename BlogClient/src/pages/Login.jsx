@@ -40,7 +40,9 @@ function Login() {
     <>
       <div className="flex flex-col justify-center items-center h-[100vh] gap-3">
         <h1 className="text-3xl font-bold text-gray-800">Login</h1>
-        <form className="flex flex-col items-center justify-center gap-6 p-6 bg-zinc-100">
+        <button onClick={()=>navigate("/")} className="text-red-500 text-[20px]"><span>X</span></button>
+        <form className="flex flex-col items-center justify-center 
+        gap-6 py-12 px-20 bg-zinc-100  rounded-md">
           <input
             type="text"
             placeholder="Enter email"
