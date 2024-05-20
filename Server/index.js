@@ -9,7 +9,10 @@ const PORT=8080
 //middelwares
 app.use(express.json())
 app.use(cookieParser())
-app.use(cors())
+app.use(cors({
+    origin: 'http://localhost:5173', // Your frontend origin
+    credentials: true // Allow credentials (cookies)
+  }))
 
 
 

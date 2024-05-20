@@ -7,13 +7,14 @@ const {
   updatePost,
   postCategory,
 } = require("../controllers/postController");
+const authenticate = require("../middlewares/authenticate");
 const router = express.Router();
 
 router.get("/:category", getPosts);
 router.get("/post/:id", getPost);
 router.get("/:category", postCategory);
-router.post("/createpost", createPost);
+router.post("/createpost",  createPost);
 router.delete("/post/:id", deletePost);
-router.put("/updatepost/:id", updatePost);
+router.put("/updatepost/:id",updatePost);
 
 module.exports = router;
